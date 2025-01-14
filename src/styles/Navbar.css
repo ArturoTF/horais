@@ -1,0 +1,66 @@
+/* Estilos básicos del menú */
+.menu {
+    display: flex;
+    justify-content: space-between; /* Espacia título y enlaces */
+    align-items: center; /* Centra elementos verticalmente */
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .menu-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .menu-links {
+    display: flex;
+    gap: 20px; /* Espacio entre enlaces */
+    transition: all 0.3s ease;
+  }
+  
+  .menu-link {
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    transition: color 0.3s ease;
+  }
+  
+  .menu-link:hover {
+    color: gray; /* Cambia color al pasar el cursor */
+  }
+  
+  /* Botón hamburguesa (oculto por defecto) */
+  .menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Media Query para pantallas pequeñas */
+  @media (max-width: 700px) {
+    .menu-links {
+      display: none; /* Oculta los enlaces por defecto */
+      flex-direction: column; /* Alineación vertical para el menú desplegable */
+      position: absolute;
+      top: 60px; /* Debajo del navbar */
+      right: 20px;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      z-index: 1000;
+    }
+  
+    .menu-links.open {
+      display: flex; /* Muestra el menú desplegable */
+      margin-top: 20px;
+      background-color: transparent;
+      color: white;
+    }
+  
+    .menu-button {
+      display: block; /* Muestra el botón hamburguesa */
+    }
+  }
+  
